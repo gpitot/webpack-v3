@@ -15,6 +15,10 @@ const config = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: [{ loader: "html-loader", options: { minimize: true } }],
+      },
+      {
         test: /\.js$/,
         use: "babel-loader",
         exclude: /node_modules/,
@@ -56,10 +60,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      templateContent: ({ htmlWebpackPlugin }) =>
-        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' +
-        htmlWebpackPlugin.options.title +
-        '</title></head><body><div id="app"></div></body></html>',
+      template: "src/index.html",
       filename: "index.html",
     }),
   ],

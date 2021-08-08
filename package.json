@@ -12,9 +12,11 @@
     "build-prod": "yarn run clean && webpack --mode production",
     "test": "jest",
     "cypress:open": "cypress open",
-    "watch" : "npx webpack serve --mode development"
+    "watch": "npx webpack serve --mode development"
   },
-  "dependencies": {},
+  "dependencies": {
+    "html-loader": "^2.1.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
